@@ -1,4 +1,4 @@
-const CACHE = "fonte-v40";
+const CACHE = "fonte-v42";
 const ASSETS = ["./", "index.html", "app.js", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "favicon-32.png"];
 
 self.addEventListener("install", (e) => {
@@ -17,7 +17,7 @@ self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
   const url = e.request.url;
   // ne jamais mettre en cache les appels cloud / CDN externes : toujours réseau direct
-  if (url.includes("supabase.co") || url.includes("esm.sh") || url.includes("supabase.com")) return;
+  if (url.includes("supabase.co") || url.includes("esm.sh") || url.includes("supabase.com") || url.includes("jsdelivr.net")) return;
   e.respondWith(
     caches.match(e.request, { ignoreSearch: true }).then(
       (cached) =>
