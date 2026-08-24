@@ -1,4 +1,4 @@
-const CACHE = "fonte-v104";
+const CACHE = "fonte-v105";
 const ASSETS = ["./", "index.html", "app.js", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "favicon-32.png"];
 
 self.addEventListener("install", (e) => {
